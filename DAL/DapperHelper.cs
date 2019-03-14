@@ -50,8 +50,8 @@ namespace DAL
         using (conn)
         {
             Type type = typeof(T);
-            string sql = "select * from " + type.Name + "";
-            return conn.Query<T>(sql).ToList();
+            string procName = "";
+            return conn.Query<T>(procName, commandType: CommandType.StoredProcedure).ToList();
         }
     }
     public int Delete(int id)
